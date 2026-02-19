@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: campusbooking-backend
+    env: docker
+    dockerContext: ./backend
+    plan: free
+    envVars:
+      - key: PORT
+        value: 9093
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: campusbooking-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: campusbooking-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: campusbooking-db
+          property: password
+
+databases:
+  - name: campusbooking-db
+    plan: free
+    databaseName: campusbooking
+    user: campus_user
+
