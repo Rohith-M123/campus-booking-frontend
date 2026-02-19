@@ -1,0 +1,7 @@
+{
+  "name": "Centurion Campus Venue & Event Management",
+  "description": "A comprehensive role-based booking system for university venues, featuring real-time availability, AI-assisted slot suggestions, and detailed analytics for Admin, Faculty, and Student Coordinators.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
